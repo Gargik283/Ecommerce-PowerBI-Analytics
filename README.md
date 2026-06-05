@@ -49,18 +49,17 @@ To ensure optimal query performance, rapid DAX calculation execution, and scalab
 ## ⚡ Advanced DAX Formulas & Analytics
 All metrics are organized inside a dedicated **`DAX_MEASURES`** home table for clean code governance and model maintainability.
 
-### 1️⃣ Total Sales Revenue 
-```dax
+1️⃣ Total Sales Revenue 
 TOTAL SALES = SUM(fact_table[total_price])
 
-### **2️⃣ Year-over-Year (YoY) Revenue Growth %
+2️⃣ Year-over-Year (YoY) Revenue Growth %
 ```dax
 % YOY SALES = 
 VAR A = DIVIDE([TOTAL SALES],[PY SALES])-1
 VAR LABEL = FORMAT(A, "#0.0%")
 RETURN LABEL & IF(A>0,"⬆️","⬇️")
 
-### ***3️⃣ Active Customer Count
+3️⃣ Active Customer Count
 ACTIVE CUSTOMERS = DISTINCTCOUNT(customer_dim[coustomer_key])
 
 🛠️ Technical Competencies Demonstrated
