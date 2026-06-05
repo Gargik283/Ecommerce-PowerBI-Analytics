@@ -26,15 +26,25 @@ This project delivers a robust business intelligence solution designed to track,
 
 ## 🏗️ Data Architecture & Modeling (Star Schema)
 To ensure optimal query performance, rapid DAX calculation execution, and scalable reporting, the data model was built using a **Star Schema** architecture via the **Manage Relationships** view.
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[customer_dim]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[item_dim]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[store_dim]
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[fact_table]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;---
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[time_dim]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Trans_dim]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DAX_MEASURES]
+## 🏗️ Data Architecture & Modeling (Star Schema)
+To ensure optimal query performance, rapid DAX calculation execution, and scalable reporting, the data model was built using a structured **Star Schema** architecture via the **Manage Relationships** view.
+
+<p align="center">
+  <img src="Model_View.png" alt="Data Model Star Schema" width="80%">
+</p>
 
 ---
+
+## Data Dictionary & Schema Overview
+
+| Table Name | Table Type | Key Columns / Content | Purpose |
+| :--- | :--- | :--- | :--- |
+| **`fact_table`** | Fact | `SalesAmount`, `Quantity`, `order_ID`, Foreign Keys | Stores core transactional metrics and business events. |
+| **`customer_dim`** | Dimension | `Customer_ID`, `Customer_Name`, Demographics | Enriches data with customer profile and regional insights. |
+| **`item_dim`** | Dimension | `Item_ID`, `Category`, `Price` | Holds product definitions and catalog pricing. |
+| **`store_dim`** | Dimension | `Store_ID`, `Store_Name`, `Region` | Maps geographical and store-level performance. |
+| **`time_dim`** | Dimension | `Date`, `Year`, `Quarter`, `Month` | Enables advanced **Time Intelligence** calculations. |
+| **`Trans_dim`** | Dimension | `Transaction_ID`, `Shipping_Method` | Segment transactional logistics and payment modes. |
 
 ### Data Dictionary & Schema Overview
 
