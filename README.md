@@ -47,31 +47,30 @@ To ensure optimal query performance, rapid DAX calculation execution, and scalab
 ---
 
 ## ⚡ Advanced DAX Formulas & Analytics
-All metrics are organized inside a dedicated **`DAX_MEASURES`** home table for clean code governance and model maintainability.
+All metrics are organized inside a dedicated `DAX_MEASURES` home table for clean code governance and model maintainability.
 
-1️⃣ Total Sales Revenue 
+### 1️⃣ Total Sales Revenue
 TOTAL SALES = SUM(fact_table[total_price])
 
-2️⃣ Year-over-Year (YoY) Revenue Growth %
-```dax
+### 2️⃣ Year-over-Year (YoY) Revenue Growth %
 % YOY SALES = 
-VAR A = DIVIDE([TOTAL SALES],[PY SALES])-1
+VAR A = DIVIDE([TOTAL SALES], [PY SALES]) - 1
 VAR LABEL = FORMAT(A, "#0.0%")
-RETURN LABEL & IF(A>0,"⬆️","⬇️")
+RETURN LABEL & IF(A > 0, "⬆️", "⬇️")
 
-3️⃣ Active Customer Count
+### 3️⃣ Active Customer Count
 ACTIVE CUSTOMERS = DISTINCTCOUNT(customer_dim[coustomer_key])
 
-🛠️ Technical Competencies Demonstrated
-Data Modeling: Star Schema Design, Relationship Cardinality (1:Many), Cross-Filter Direction Optimization.
+---
 
-DAX Proficiency: Time Intelligence functions (SAMEPERIODLASTYEAR), Conditional Formatting rules, and Filter Context manipulation (CALCULATE).
+## 🛠️ Technical Competencies Demonstrated
+* **Data Modeling:** Star Schema Design, Relationship Cardinality (1:Many), Cross-Filter Direction Optimization.
+* **DAX Proficiency:** Time Intelligence functions, Conditional Formatting rules, and Filter Context manipulation (`CALCULATE`).
+* **UI/UX Design:** Built cohesive visual layouts following professional design frameworks (consistent grid system, accessible color contrast, intuitive KPI card placements).
+* **Power BI Service Deployment:** Workspace management, dashboard creation, app publishing.
 
-UI/UX Design: Built cohesive visual layouts following professional design frameworks (consistent grid system, accessible color contrast, intuitive KPI card placements).
+---
 
-Power BI Service Deployment: Workspace management, dashboard creation, app publishing.
-
-📬 Connect With Me
-LinkedIn: https://www.linkedin.com/in/gargi-kundu
-
-Email: gargikundu211@gmail.com
+## 📬 Connect With Me
+* **LinkedIn:** [Gargi Kundu](https://www.linkedin.com/in/gargi-kundu)
+* **Email:** gargikundu211@gmail.com
