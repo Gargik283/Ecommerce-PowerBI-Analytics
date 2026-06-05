@@ -16,33 +16,33 @@ This project delivers a robust business intelligence solution designed to track,
 
 ### 📊 Page 1: Year-Wise Analysis
 *Focuses on long-term macro trends, revenue trajectories, and temporal performance spikes.*
-![Year-Wise Analysis](Year Wise Analysis.png)
+![Year-Wise Analysis](Year_Wise_Analysis.png)
 
 ### 👥 Page 2: Customer & Product Insights
 *Deep-dives into customer demographics, high-value retention metrics, and product category distribution.*
-![Customer & Product Insights](Customer and Product Insights.png)
+![Customer & Product Insights](Customer_and _Product_Insights.png)
 
 ---
 
 ## 🏗️ Data Architecture & Modeling (Star Schema)
 To ensure optimal query performance, rapid DAX calculation execution, and scalable reporting, the data model was built using a **Star Schema** architecture via the **Manage Relationships** view.
-[CUSTOMER_DIM]        [ITEM_DIM]        [STORE_DIM]
+[customer_dim]        [item_dim]        [store_dim]
              \                   |                  /
               \                  |                 /
-               --->        [FACT_TABLE]       <---
-              /                  |                 \
-             /                   |                  \
-       [TIME_DIM]          [TRANS_DIM]         [DAX_MEASURES]
+               --->        [fact_table]       <---
+              /                  |                 
+             /                   |                  
+       [time_dim]          [Trans_dim]         
 ### Data Dictionary & Schema Overview
 
 | Table Name | Table Type | Key Columns / Content | Purpose |
 | :--- | :--- | :--- | :--- |
-| **`FACT_TABLE`** | Fact | `SalesAmount`, `Quantity`, `Order_ID`, Foreign Keys | Stores core transactional metrics and business events. |
-| **`CUSTOMER_DIM`** | Dimension | `Customer_ID`, `Customer_Name`, Demographics | Enriches data with customer profile and regional insights. |
-| **`ITEM_DIM`** | Dimension | `Item_ID`, `Category`, `Price` | Holds product definitions and catalog pricing. |
-| **`STORE_DIM`** | Dimension | `Store_ID`, `Store_Name`, `Region` | Maps geographical and store-level performance. |
-| **`TIME_DIM`** | Dimension | `Date`, `Year`, `Quarter`, `Month` | Enables advanced **Time Intelligence** calculations. |
-| **`TRANS_DIM`** | Dimension | `Transaction_ID`, `Shipping_Method` | Segment transactional logistics and payment modes. |
+| **`fact_table`** | Fact | `SalesAmount`, `Quantity`, `Order_ID`, Foreign Keys | Stores core transactional metrics and business events. |
+| **`customer_dim`** | Dimension | `Customer_ID`, `Customer_Name`, Demographics | Enriches data with customer profile and regional insights. |
+| **`item_dim`** | Dimension | `Item_ID`, `Category`, `Price` | Holds product definitions and catalog pricing. |
+| **`store_dim`** | Dimension | `Store_ID`, `Store_Name`, `Region` | Maps geographical and store-level performance. |
+| **`time_dim`** | Dimension | `Date`, `Year`, `Quarter`, `Month` | Enables advanced **Time Intelligence** calculations. |
+| **`Trans_dim`** | Dimension | `Transaction_ID`, `Shipping_Method` | Segment transactional logistics and payment modes. |
 
 ---
 
@@ -51,17 +51,16 @@ All metrics are organized inside a dedicated **`DAX_MEASURES`** home table for c
 
 ### 1️⃣ Total Sales Revenue
 ```dax
-Total Revenue = SUM(FACT_TABLE[SalesAmount])
+TOTAL SALES = SUM(fact_table[total_price])
 
-### 2️⃣ Year-over-Year (YoY) Revenue Growth %
-YoY Growth % = 
-VAR CurrentYearSales = [Total Revenue]
-VAR PreviousYearSales = CALCULATE([Total Revenue], SAMEPERIODLASTYEAR(TIME_DIM[Date]))
-RETURN
-DIVIDE(CurrentYearSales - PreviousYearSales, PreviousYearSales, 0)
+### 2️⃣ Year-over-Year (YoY) Sales %
+% YOY SALES = 
+VAR A = DIVIDE([TOTAL SALES],[PY SALES])-1
+VAR LABEL = FORMAT(A, "#0.0%")
+RETURN LABEL & IF(A>0,"⬆️","⬇️")
 
 ### 3️⃣ Active Customer Count
-Unique Customers = DISTINCTCOUNT(FACT_TABLE[Customer_ID])
+ACTIVE CUSTOMERS = DISTINCTCOUNT(customer_dim[coustomer_key])
 
 🛠️ Technical Competencies Demonstrated
 Data Modeling: Star Schema Design, Relationship Cardinality (1:Many), Cross-Filter Direction Optimization.
@@ -73,6 +72,6 @@ UI/UX Design: Built cohesive visual layouts following professional design framew
 Power BI Service Deployment: Workspace management, dashboard creation, app publishing.
 
 📬 Connect With Me
-LinkedIn: Your Name
+LinkedIn: https://www.linkedin.com/in/gargi-kundu
 
-Email: [Your Email Address]
+Email: gargikundu211@gmail.com
