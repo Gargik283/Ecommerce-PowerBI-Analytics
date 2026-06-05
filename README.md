@@ -16,11 +16,17 @@ This project delivers a robust business intelligence solution designed to track,
 
 ### 📊 Page 1: Year-Wise Analysis
 *Focuses on long-term macro trends, revenue trajectories, and temporal performance spikes.*
-![Year-Wise Analysis](Year_Wise_Analysis.png)
+
+<p align="center">
+  <img src="Year_Wise_Analysis.png" alt="Year-Wise Analysis Dashboard" width="90%">
+</p>
 
 ### 👥 Page 2: Customer & Product Insights
 *Deep-dives into customer demographics, high-value retention metrics, and product category distribution.*
-![Customer & Product Insights](Customer_and _Product_Insights.png)
+
+<p align="center">
+  <img src="Customer_and_Product_Insights.png" alt="Customer and Product Insights Dashboard" width="90%">
+</p>
 
 ---
 
