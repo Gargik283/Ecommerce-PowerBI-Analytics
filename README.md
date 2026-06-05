@@ -30,9 +30,9 @@ To ensure optimal query performance, rapid DAX calculation execution, and scalab
              \                   |                  /
               \                  |                 /
                --->        [fact_table]       <---
-              /                  |                 
-             /                   |                  
-       [time_dim]          [Trans_dim]         
+              /                  |                 \
+             /                   |                  \
+       [time_dim]           [Trans_dim]        [DAX_MEASURES]
 ### Data Dictionary & Schema Overview
 
 | Table Name | Table Type | Key Columns / Content | Purpose |
