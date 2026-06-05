@@ -26,7 +26,8 @@ This project delivers a robust business intelligence solution designed to track,
 
 ## 🏗️ Data Architecture & Modeling (Star Schema)
 To ensure optimal query performance, rapid DAX calculation execution, and scalable reporting, the data model was built using a **Star Schema** architecture via the **Manage Relationships** view.
-[customer_dim]        [item_dim]        [store_dim]
+```text
+       [customer_dim]        [item_dim]        [store_dim]
              \                   |                  /
               \                  |                 /
                --->        [fact_table]       <---
