@@ -69,14 +69,14 @@ The project follows a complete Business Intelligence workflow, beginning with ra
 *Focuses on long-term macro trends, revenue trajectories, and temporal performance spikes.*
 
 <p align="center">
-  <img src="Year_Wise_Analysis.png" alt="Year-Wise Analysis Dashboard" width="90%">
+  <img src="Dashboard Screenshots/Year_Wise_Analysis.png" alt="Year-Wise Analysis Dashboard" width="90%">
 </p>
 
 ### 👥 Page 2: Customer & Product Insights
 *Deep-dives into customer demographics, high-value retention metrics, and product category distribution.*
 
 <p align="center">
-  <img src="Customer_and_Product_Insights.png" alt="Customer and Product Insights Dashboard" width="90%">
+  <img src="Dashboard Screenshots/Customer_and_Product_Insights.png" alt="Customer and Product Insights Dashboard" width="90%">
 </p>
 
 ---
@@ -85,7 +85,7 @@ The project follows a complete Business Intelligence workflow, beginning with ra
 To ensure optimal query performance, rapid DAX calculation execution, and scalable reporting, the data model was built using a **Star Schema** architecture via the **Manage Relationships** view.
 
 <p align="center">
-  <img src="Model_View.png" alt="Data Model Star Schema" width="80%">
+  <img src="Dashboard Screenshots/Model_View.png" alt="Data Model Star Schema" width="80%">
 </p>
 
 ---
