@@ -35,7 +35,7 @@ This project demonstrates an end-to-end **Business Intelligence solution** built
 ## 📈 Executive Sales Dashboard
 
 <p align="center">
-<img src="Year_Wise_Analysis.png" width="90%">
+<img src="Dashboard Screenshots/Year_Wise_Analysis.png" width="90%">
 </p>
 
 ---
@@ -43,7 +43,7 @@ This project demonstrates an end-to-end **Business Intelligence solution** built
 ## 👥 Customer & Product Dashboard
 
 <p align="center">
-<img src="Customer_and_Product_Insights.png" width="90%">
+<img src="Dashboard Screenshots/Customer_and_Product_Insights.png" width="90%">
 </p>
 
 ---
@@ -74,7 +74,7 @@ Business Insights
 # ⭐ Star Schema Model
 
 <p align="center">
-<img src="Model_View.png" width="85%">
+<img src="Dashboard Screenshots/Model_View.png" width="85%">
 </p>
 
 The project follows a **Star Schema** consisting of one Fact Table connected to multiple Dimension Tables for efficient reporting and optimized DAX calculations.
